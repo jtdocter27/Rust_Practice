@@ -1,3 +1,18 @@
+pub mod iterator {
+    pub fn demonstraction() {
+        let numbers = [1,2,3]; //this is a collection 
+        let mut numbers = numbers.iter(); 
+        if let Some(first) = numbers.next(){ //rusts shorthand for pattern matching. If there's a next number in the numbers collection, will assign to the variable
+            println!("{first}"); 
+        }
+        if let Some(second) = numbers.next() {
+            println!("{second}")
+        }
+        if let Some(third) = numbers.next() {
+            println!("{third}")
+        }
+    }}
+
 fn main() {
     fn themathahead(input: u8) -> u8 {
         let answer = input * 2 ; 
@@ -19,7 +34,7 @@ fn main() {
         println!("{}", answer); 
         return answer; 
     }
-let inc = moonwater(increment, 2); 
+// let inc = moonwater(increment, 2); 
 
 let square = |a| a*a;  // let a variable take in "a" and multiply it by itself. 
 let answer = square(2);
@@ -29,18 +44,24 @@ let number = 338;
 let output = move || println!("{number}"); //this defines a closure that prints number and infers it from the environment. move takes the value in number and puts it into output, which makes number no longer an accessible variable. 
 
 // output(); 
-pub mod iterator {
-    pub fn demonstraction() {
-        let pub numbers = [1,2,3];
-        let mut numbers = numers.iter(); 
+
+iterator::demonstraction();
+
+let mut numbers = [10, 20, 30].iter(); 
+numbers.next(); 
+numbers.next(); 
+let remaining: Vec<&u32> = numbers.collect(); //. collect consumes the rest of the iterator and builds a collection from it. Vec<&u32> is the type annotation for a vector 
+println!("{:?}", remaining); 
+// -------------------------------------------------------------
+let numbers = [1, 2, 3];
+let nums: Vec<i32> = numbers.iter().map(|x| x*2).collect(); 
+
+println!("{:?}", nums); 
 
 
-    }
-  
 
 }
 
 
 
 
-}
