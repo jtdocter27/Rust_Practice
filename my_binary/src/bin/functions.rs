@@ -51,17 +51,26 @@ let mut numbers = [10, 20, 30].iter();
 numbers.next(); 
 numbers.next(); 
 let remaining: Vec<&u32> = numbers.collect(); //. collect consumes the rest of the iterator and builds a collection from it. Vec<&u32> is the type annotation for a vector 
-println!("{:?}", remaining); 
-// -------------------------------------------------------------
+println!("{:?}", remaining); // we use & above because you have to reference the the numbers being iterated. 
+// ------------------------------------------------------------- Map
 let numbers = [1, 2, 3];
-let nums: Vec<i32> = numbers.iter().map(|x| x*2).collect(); 
+let nums: Vec<i32> = numbers.iter().map(|x| x*4).collect(); //no & here because the map creates new values. 
 
 println!("{:?}", nums); 
 
+//---------------------------------------------------------------- Filter 
+let chars = ['a', '1', 'E', 'F']; 
+let filtered: Vec<&char> = chars.iter().filter(|c| c.is_uppercase()).collect(); //collect appears to be necessary 
+
+println!("{filtered:?}"); 
+
+
+
+//Enumerate ------------------------------------------------------------------
+let people = ["Li", "Patrick", "Spongebob"]; 
+let enumerated: Vec<(usize, &&str)> = people.iter().enumerate().filter( |(i, n)| i> &1).collect();
+
+println!("{enumerated:?}"); 
 
 
 }
-
-
-
-
