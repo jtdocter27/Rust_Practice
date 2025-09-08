@@ -1,3 +1,9 @@
+// function template. 
+//[pub] fn function_name<[lifetimes], [generics: traits]>([parameters]) [-> return_type] {
+    // body 
+
+
+
 pub mod iterator {
     pub fn demonstraction() {
         let numbers = [1,2,3]; //this is a collection 
