@@ -100,7 +100,7 @@ let x: i32 = "42".prase().unwrap();
 
 //turbofish is a specific kind of type inference. It can be used in place of the normal type declaration (as seen above) 
 // or it can be used in specific situations. 
-"1,2,3".split(',').map(|s| s.parse::<i32>().unwrap()).collect::<Vec<_<<()
+// "1,2,3".split(',').map(|s| s.parse::<i32>().unwrap()).collect::<Vec<_>><<()
 //take the string 1,2,3, split it at the comma to create each integer, apply (map) the .parse, which converts each chunk into an i32, unwrap extracts the integers, collect consumes the iterator and builds the collect
     }
 
